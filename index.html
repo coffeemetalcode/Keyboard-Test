@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- pull Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+  <!-- pull JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Pull Tone.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.3.8/Tone.js" integrity="sha256-naTV/LhDwsz+OlK3sI09fOYfIIu1yy85XA8KS9skb7c="
+    crossorigin="anonymous"></script>
+
+  <!-- pull local CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Keyboard</title>
+
+</head>
+
+<body>
+
+  <ul class="set">
+    <li class="white c" id="c3"></li>
+    <li class="black cs" id="cs3"></li>
+    <li class="white d" id="d3"></li>
+    <li class="black ds"></li>
+    <li class="white e"></li>
+    <li class="white f"></li>
+    <li class="black fs"></li>
+    <li class="white g"></li>
+    <li class="black gs"></li>
+    <li class="white a"></li>
+    <li class="black as"></li>
+    <li class="white b"></li>
+    <li class="white c" id="c4"></li>
+    <li class="black cs"></li>
+    <li class="white d" id="d4"></li>
+    <li class="black ds"></li>
+    <li class="white e"></li>
+    <li class="white f"></li>
+    <li class="black fs"></li>
+    <li class="white g"></li>
+    <li class="black gs"></li>
+    <li class="white a"></li>
+    <li class="black as"></li>
+    <li class="white b"></li>
+    <li class="white c"></li>
+  </ul>
+
+
+  <script>
+    //create a synth and connect it to the master output (your speakers)
+    var synth = new Tone.Synth().toMaster()
+    //play a middle 'C' for the duration of an 8th note
+    var c3 = 'C3';
+    // var cs3 = 'CS3' // don't know the naming convention for sharp notes
+    var d3 = 'D3';
+
+    synth.triggerAttackRelease(c3, '4n')
+
+    $(document).on("click", "#c3", function () {
+
+      synth.triggerAttackRelease(c3, '4n')
+
+    });
+
+    $(document).on("click", "#d3", function () {
+
+      synth.triggerAttackRelease(d3, '4n')
+
+    });
+
+  </script>
+
+</body>
+
+</html>
